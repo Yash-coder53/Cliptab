@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliptab - Build. Automate. Scale.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black text-red-600 tracking-wider">CLIPTAB</div>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="text-gray-600 hover:text-red-600 transition">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-red-600 transition">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-red-600 transition">About</a>
+                <a href="#contact" class="text-gray-600 hover:text-red-600 transition">Contact</a>
+            </nav>
+            <a href="#contact" class="bg-red-600 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-red-700 transition">Get Started</a>
+        </div>
+    </header>
+
+    <section id="home" class="pt-32 pb-20 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <p class="text-red-600 font-bold uppercase tracking-wider">Agency for the Future</p>
+                <h1 class="text-5xl md:text-7xl font-black text-gray-900 leading-tight">
+                    Build.<br><span class="text-red-600">Automate.</span><br>Scale.
+                </h1>
+                <p class="text-lg text-gray-600 max-w-md">
+                    We craft high-performance websites, stunning designs, and intelligent automation systems to help your business grow faster.
+                </p>
+                <div class="pt-4">
+                    <a href="#contact" class="bg-red-600 text-white px-8 py-4 rounded-md font-bold shadow-lg shadow-red-600/30 hover:bg-red-700 transition">
+                        BOOK APPOINTMENT
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center relative">
+                <div class="w-80 h-80 md:w-96 md:h-96 bg-zinc-950 rounded-3xl flex items-center justify-center shadow-2xl border border-zinc-800 relative">
+                    <div class="text-red-500 text-8xl filter drop-shadow-[0_0_15px_rgba(239,68,68,0.7)] animate-pulse">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 text-3xl text-gray-800">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-4xl font-black mb-4">Our Expertise</h2>
+                <p class="text-gray-500">Tailored digital systems structuralized to handle heavy operations gracefully.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="switchTab('web-dev')" class="tab-btn px-6 py-3 rounded-full font-bold bg-red-600 text-white shadow-md">Website Development</button>
+                <button onclick="switchTab('vedio editing')" class="tab-btn px-6 py-3 rounded-full font-bold bg-gray-100 text-gray-600 hover:bg-gray-200">Smart Vedio Editing</button>
+                <button onclick="switchTab('graphics design')" class="tab-btn px-6 py-3 rounded-full font-bold bg-gray-100 text-gray-600 hover:bg-gray-200">Smart Graphics Design</button>
+            </div>
+
+            <div id="web-dev" class="tab-content active bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="text-3xl text-red-600"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="text-2xl font-bold">Website Development</h3>
+                </div>
+                <p class="text-gray-600 mb-6 text-lg">Fast, responsive sites with clean UX and scalable backend architecture.</p>
+                <div class="grid grid-cols-3 gap-4 font-semibold text-gray-700">
+                    <div class="bg-white p-4 rounded-xl text-center shadow-sm">Responsive Design</div>
+                    <div class="bg-white p-4 rounded-xl text-center shadow-sm">SEO Optimized</div>
+                    <div class="bg-white p-4 rounded-xl text-center shadow-sm">Fast Loading</div>
+                </div>
+            </div>
+
+            <div id="bot-dev" class="tab-content bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="text-3xl text-red-600"><i class="fa-solid fa-robot"></i></div>
+                    <h3 class="text-2xl font-bold">Smart Bot Dev</h3>
+                </div>
+                <p class="text-gray-600 mb-6 text-lg">Telegram & Discord customized automation integrations for continuous user engagement.</p>
+                <div class="grid grid-cols-3 gap-4 font-semibold text-gray-700">
+                    <div class="bg-white p-4 rounded-xl text-center shadow-sm">Custom Commands</div>
+                    <div class="bg-white p-4 rounded-xl text-center shadow-sm">API Integration</div>
+                    <div class="bg-white p-4 rounded-xl text-center shadow-sm">24/7 Uptime</div>
+                </div>
+            </div>
+
+            <div id="automation" class="tab-content bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="text-3xl text-red-600"><i class="fa-solid fa-gears"></i></div>
+                    <h3 class="text-2xl font-bold">Smart Automation</h3>
+                </div>
+                <p class="text-gray-600 mb-6 text-lg">Workflows customized logically to save operational team hours and scale production revenue.</p>
+                <div class="grid grid-cols-3 gap-4 font-semibold text-gray-700">
+                    <div class="bg-white p-4 rounded-xl text-center shadow-sm">Workflow Audit</div>
+                    <div class="bg-white p-4 rounded-xl text-center shadow-sm">Custom Scripts</div>
+                    <div class="bg-white p-4 rounded-xl text-center shadow-sm">Integration</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-zinc-950 text-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="bg-zinc-900 border border-zinc-800 p-12 rounded-3xl text-center">
+                <span class="text-sm font-bold tracking-widest text-zinc-500 uppercase block mb-2">Internal Culture</span>
+                <div class="text-5xl font-black tracking-tighter text-zinc-700">AGENCY</div>
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-4xl font-black">Our Mission</h2>
+                <p class="text-zinc-400 leading-relaxed">
+                    Founded on the belief that technology should simplify business management frameworks, not complicate it. We started as a small nimble team of engineers and designers determined to execute production builds better.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
+                    <div>
+                        <h4 class="font-bold text-red-500 mb-1">Innovation</h4>
+                        <p class="text-sm text-zinc-400">Always pushing standard production boundaries.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-500 mb-1">Quality</h4>
+                        <p class="text-sm text-zinc-400">Pixel-perfect interfaces matched with clean code.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-500 mb-1">Integrity</h4>
+                        <p class="text-sm text-zinc-400">Honest transparent timelines and execution matrices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12">
+            
+            <div class="md:col-span-5 space-y-8">
+                <div>
+                    <h2 class="text-4xl font-black mb-4">Let's talk about your project.</h2>
+                    <p class="text-gray-600">Have a system requirement question or ready to scale right away? Drop a connection request line down below.</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="https://whatsapp.com/channel/0029VbC8h2U3gvWXVldxxM2C" target="_blank" class="flex items-center space-x-3 p-4 bg-emerald-500 text-white rounded-2xl hover:bg-emerald-600 transition font-bold shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/cliptab_agency/?utm_source=ig_web_button_share_sheet" class="flex items-center space-x-3 p-4 bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 text-white rounded-2xl hover:opacity-90 transition font-bold shadow-sm">
+                        <i class="fa-brands fa-instagram text-xl"></i> <span>Instagram</span>
+                    </a>
+                    <a href="https://telegram.me/CliptabSupport" class="flex items-center space-x-3 p-4 bg-sky-500 text-white rounded-2xl hover:bg-sky-600 transition font-bold shadow-sm">
+                        <i class="fa-brands fa-telegram text-xl"></i> <span>Telegram</span>
+                    </a>
+                    <a href="mailto:Cliptabagency@gmail.com" class="flex items-center space-x-3 p-4 bg-rose-600 text-white rounded-2xl hover:bg-rose-700 transition font-bold shadow-sm">
+                        <i class="fa-solid fa-envelope text-xl"></i> <span>Gmail</span>
+                    </a>
+                </div>
+
+                <div class="pt-4 border-t border-gray-200">
+                    <p class="text-sm text-gray-500 font-medium">Or Email Us Direct</p>
+                    <a href="mailto:hello@cliptabagency.com" class="text-lg font-bold text-gray-900 hover:text-red-600 transition">hello@cliptabagency.com</a>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 bg-white p-8 md:p-10 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Name</label>
+                        <input type="text" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-red-500 transition" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
+                        <input type="email" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-red-500 transition" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Message</label>
+                        <textarea rows="4" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-red-500 transition resize-none" placeholder="Tell us about your project features..."></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="w-full bg-red-600 text-white font-bold py-4 rounded-xl hover:bg-red-700 transition shadow-lg shadow-red-600/20">
+                        Send Message
+                    </button>
+                </form>
+
+                <div id="successState" class="hidden text-center py-12 space-y-4">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Message Sent!</h3>
+                    <p class="text-gray-500">We'll get back to you soon.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100 py-8 text-center text-sm text-gray-500">
+        &copy; 2026 Cliptab Agency. All rights reserved.
+    </footer>
+
+    <script>
+        // Tab switching logic for Services section
+        function switchTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Reset tab button states
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+                btn.classList.add('bg-gray-100', 'text-gray-600');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Set active button style dynamically
+            const activeBtn = event.currentTarget;
+            activeBtn.classList.remove('bg-gray-100', 'text-gray-600');
+            activeBtn.classList.add('bg-red-600', 'text-white', 'shadow-md');
+        }
+
+        // Form Submit Processing Screen Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successState = document.getElementById('successState');
+
+            // Show simulated loading/sending state
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending...";
+
+            setTimeout(() => {
+                form.classList.add('hidden');
+                successState.classList.remove('hidden');
+            }, 1200); // Transitions to success markup mimicking timeline element 0:33
+        }
+    </script>
+</body>
+</html>
+                    <a href="https://wa.me/918306162479" target="_blank" class="flex items-center space-x-3 p-4 bg-emerald-500 text-white rounded-2xl hover:bg-emerald-600 transition font-bold shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>WhatsApp</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 p-4 bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 text-white rounded-2xl hover:opacity-90 transition font-bold shadow-sm">
+                        <i class="fa-brands fa-instagram text-xl"></i> <span>Instagram</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 p-4 bg-sky-500 text-white rounded-2xl hover:bg-sky-600 transition font-bold shadow-sm">
+                        <i class="fa-brands fa-telegram text-xl"></i> <span>Telegram</span>
+                    </a>
+                    <a href="mailto:official.zyn.store@gmail.com" class="flex items-center space-x-3 p-4 bg-rose-600 text-white rounded-2xl hover:bg-rose-700 transition font-bold shadow-sm">
+                        <i class="fa-solid fa-envelope text-xl"></i> <span>Gmail</span>
+                    </a>
+                </div>
+
+                <div class="pt-4 border-t border-gray-200">
+                    <p class="text-sm text-gray-500 font-medium">Or Email Us Direct</p>
+                    <a href="mailto:hello@cliptabagency.com" class="text-lg font-bold text-gray-900 hover:text-red-600 transition">hello@cliptabagency.com</a>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 bg-white p-8 md:p-10 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Name</label>
+                        <input type="text" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-red-500 transition" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
+                        <input type="email" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-red-500 transition" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Message</label>
+                        <textarea rows="4" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-red-500 transition resize-none" placeholder="Tell us about your project features..."></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="w-full bg-red-600 text-white font-bold py-4 rounded-xl hover:bg-red-700 transition shadow-lg shadow-red-600/20">
+                        Send Message
+                    </button>
+                </form>
+
+                <div id="successState" class="hidden text-center py-12 space-y-4">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Message Sent!</h3>
+                    <p class="text-gray-500">We'll get back to you soon.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100 py-8 text-center text-sm text-gray-500">
+        &copy; 2026 Cliptab Agency. All rights reserved.
+    </footer>
+
+    <script>
+        // Tab switching logic for Services section
+        function switchTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Reset tab button states
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+                btn.classList.add('bg-gray-100', 'text-gray-600');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Set active button style dynamically
+            const activeBtn = event.currentTarget;
+            activeBtn.classList.remove('bg-gray-100', 'text-gray-600');
+            activeBtn.classList.add('bg-red-600', 'text-white', 'shadow-md');
+        }
+
+        // Form Submit Processing Screen Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successState = document.getElementById('successState');
+
+            // Show simulated loading/sending state
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending...";
+
+            setTimeout(() => {
+                form.classList.add('hidden');
+                successState.classList.remove('hidden');
+            }, 1200); // Transitions to success markup mimicking timeline element 0:33
+        }
+    </script>
+</body>
+</html>
