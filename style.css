@@ -1,0 +1,224 @@
+/* ==========================================
+   CLIPTAB AGENCY - MAIN STYLESHEET
+   ========================================== */
+
+/* ---------- BASE RESET & GLOBAL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f9fafb;
+    color: #111827;
+    line-height: 1.5;
+}
+
+section {
+    scroll-margin-top: 5rem;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #dc2626;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ---------- MOBILE MENU ---------- */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.mobile-menu.open {
+    max-height: 400px;
+}
+
+.mobile-link {
+    text-decoration: none;
+    padding: 0.5rem 0;
+    display: block;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.mobile-link:last-child {
+    border-bottom: none;
+}
+
+/* ---------- HERO ---------- */
+.hero-card {
+    transition: transform 0.4s ease;
+    animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+.hero-glow {
+    filter: drop-shadow(0 0 18px rgba(239, 68, 68, 0.8));
+    animation: pulseGlow 2.2s infinite;
+}
+
+@keyframes pulseGlow {
+    0%   { filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.6)); }
+    50%  { filter: drop-shadow(0 0 28px rgba(239, 68, 68, 1)); }
+    100% { filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.6)); }
+}
+
+/* ---------- TAB SYSTEM ---------- */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: inherit;
+}
+
+.tab-btn.active-tab {
+    background-color: #dc2626;
+    color: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.25);
+}
+
+/* ---------- FORM ---------- */
+input:focus,
+textarea:focus {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+    outline: none;
+}
+
+#submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ---------- CARDS & BOXES ---------- */
+.bg-white,
+.rounded-3xl,
+.rounded-2xl,
+.rounded-xl {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ---------- UTILITY: SMOOTH LINK TRANSITION ---------- */
+a {
+    transition: color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+/* ---------- BREAK LONG EMAILS ON MOBILE ---------- */
+.break-all {
+    word-break: break-all;
+}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dc2626;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b91c1c;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .hero-card {
+        animation: none;
+    }
+    h1 {
+        font-size: 2.75rem;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
