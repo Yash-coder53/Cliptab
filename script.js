@@ -12,15 +12,20 @@
     const tabContents = document.querySelectorAll('.tab-content');
 
     function activateTab(tabId) {
+        // Hide all contents
         tabContents.forEach((content) => content.classList.remove('active'));
+
+        // Remove active styles from all buttons
         tabButtons.forEach((btn) => {
             btn.classList.remove('active-tab', 'bg-red-600', 'text-white', 'shadow-md');
             btn.classList.add('bg-gray-100', 'text-gray-600');
         });
 
+        // Show selected content
         const targetContent = document.getElementById(tabId);
         if (targetContent) targetContent.classList.add('active');
 
+        // Add active styles to selected button
         const activeButton = Array.from(tabButtons).find(
             (btn) => btn.dataset.tab === tabId
         );
@@ -31,6 +36,7 @@
         }
     }
 
+    // Button click events
     tabButtons.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -38,6 +44,10 @@
             if (tabId) activateTab(tabId);
         });
     });
+
+    // Initialize the first tab so it looks correct on page load
+    activateTab('web-dev');
+
 
     /* ==========================================
        2. MOBILE MENU TOGGLE
@@ -126,7 +136,7 @@
         }
 
         let current = '';
-        const scrollPos = window.scrollY + 120;
+        const scrollPos = window.scrollY + 150;
         
         sections.forEach((section) => {
             const sectionTop = section.offsetTop;
