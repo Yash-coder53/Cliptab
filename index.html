@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cliptab Agency - Build. Automate. Scale. We craft high-performance websites, stunning designs, and intelligent automation systems.">
     <title>Cliptab · Build. Automate. Scale.</title>
 
     <!-- Tailwind CSS -->
@@ -17,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles (CSS Folder) -->
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Favicon -->
@@ -94,12 +93,12 @@
                 <!-- Right Side: Graphic/Logo Card -->
                 <div class="flex justify-center items-center relative w-full mt-10 md:mt-0 px-4 md:px-0">
                     <!-- Card Background -->
-                    <div class="hero-card w-full max-w-[340px] aspect-square bg-[#111111] rounded-[2rem] flex flex-col items-center justify-center shadow-2xl border border-zinc-800 relative">
+                    <div class="hero-card w-full max-w-[340px] aspect-square bg-[#111111] rounded-[2rem] flex flex-col items-center justify-center shadow-2xl border border-zinc-800 relative overflow-visible">
                         
-                        <!-- LOGO IMAGE -->
-                        <div class="w-full h-full p-4 md:p-6 flex flex-col justify-center items-center">
-                            <!-- Make sure the image name matches in assets folder -->
-                            <img src="assets/cliptab-logo.jpg" alt="Cliptab Logo" class="w-full h-auto object-contain drop-shadow-2xl rounded-xl">
+                        <!-- LOGO IMAGE: Ensure image is inside assets folder -->
+                        <!-- I've added object-cover and w-full h-full to make it fit perfectly -->
+                        <div class="w-full h-full p-2 md:p-4 flex flex-col justify-center items-center overflow-hidden rounded-[2rem]">
+                            <img src="assets/cliptab-logo.jpg" alt="Cliptab Logo" class="w-full h-full object-cover rounded-[1.5rem]">
                         </div>
 
                         <!-- 24/7 Badge -->
@@ -118,7 +117,8 @@
         </section>
 
         <!-- ==================== SERVICES ==================== -->
-        <section id="services" class="py-20 md:py-24 bg-white border-t border-gray-100">
+        <!-- Added scroll-mt-24 to fix header overlapping issue -->
+        <section id="services" class="py-20 md:py-24 bg-white border-t border-gray-100 scroll-mt-20">
             <div class="max-w-5xl mx-auto px-6">
                 <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
                     <h2 class="text-3xl md:text-4xl font-black mb-4">Our Expertise</h2>
@@ -127,7 +127,7 @@
 
                 <!-- Tab Buttons -->
                 <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-12">
-                    <button data-tab="web-dev" class="tab-btn active-tab px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-bold transition-all duration-200">
+                    <button data-tab="web-dev" class="tab-btn px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-bold transition-all duration-200">
                         Website Development
                     </button>
                     <button data-tab="video-editing" class="tab-btn px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-bold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all duration-200">
@@ -139,7 +139,7 @@
                 </div>
 
                 <!-- Tab: Web Dev -->
-                <div id="web-dev" class="tab-content active bg-gray-50 p-6 md:p-12 rounded-3xl border border-gray-100">
+                <div id="web-dev" class="tab-content bg-gray-50 p-6 md:p-12 rounded-3xl border border-gray-100">
                     <div class="flex items-center space-x-4 mb-4">
                         <div class="text-2xl md:text-3xl text-red-600"><i class="fa-solid fa-code"></i></div>
                         <h3 class="text-xl md:text-2xl font-bold">Website Development</h3>
@@ -183,7 +183,7 @@
         </section>
 
         <!-- ==================== ABOUT ==================== -->
-        <section id="about" class="py-20 md:py-24 bg-zinc-950 text-white">
+        <section id="about" class="py-20 md:py-24 bg-zinc-950 text-white scroll-mt-20">
             <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
                 <div class="bg-zinc-900 border border-zinc-800 p-8 md:p-12 rounded-3xl text-center">
                     <span class="text-sm font-bold tracking-widest text-zinc-500 uppercase block mb-2">Internal Culture</span>
@@ -213,7 +213,7 @@
         </section>
 
         <!-- ==================== CONTACT ==================== -->
-        <section id="contact" class="py-20 md:py-24 bg-gray-50">
+        <section id="contact" class="py-20 md:py-24 bg-gray-50 scroll-mt-20">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
                 <div class="md:col-span-5 space-y-8">
                     <div>
@@ -254,14 +254,6 @@
                             <p class="text-sm text-gray-500 font-medium mb-1">Email Us Direct</p>
                             <a href="mailto:cliptabagency@gmail.com" class="text-lg font-bold text-gray-900 hover:text-red-600 transition break-all">
                                 cliptabagency@gmail.com
-                            </a>
-                        </div>
-
-                        <div>
-                            <p class="text-sm text-gray-500 font-medium mb-1">Telegram Support Group</p>
-                            <a href="https://t.me/CliptabSupport" target="_blank" rel="noopener"
-                               class="text-lg font-bold text-sky-600 hover:text-sky-700 transition break-all">
-                                t.me/CliptabSupport
                             </a>
                         </div>
                     </div>
@@ -330,11 +322,6 @@
                             <i class="fa-solid fa-envelope text-red-500"></i> cliptabagency@gmail.com
                         </a>
                     </li>
-                    <li>
-                        <a href="https://t.me/CliptabSupport" target="_blank" rel="noopener" class="hover:text-sky-600 transition flex items-center gap-2">
-                            <i class="fa-brands fa-telegram text-sky-500"></i> Telegram Support
-                        </a>
-                    </li>
                 </ul>
             </div>
 
@@ -354,7 +341,7 @@
         </div>
     </footer>
 
-    <!-- Scripts (JS Folder) -->
+    <!-- Scripts -->
     <script src="js/script.js"></script>
 </body>
 </html>
