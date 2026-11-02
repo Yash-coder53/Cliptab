@@ -1,10 +1,3 @@
-Bhai, ye raha tumhare project ke liye ek professional **`README.md`** file. Isko apne project folder ke main directory mein (jahan `index.html` hai wahan) save kar lena. Isme project ki saari details hain jo GitHub par upload karne par ekdum premium lagega.
-
----
-
-### 📄 `README.md` (Main folder me rakho)
-
-```markdown
 # ⚡ Cliptab Agency — Build. Automate. Scale.
 
 ![Cliptab Banner](https://img.shields.io/badge/Cliptab-Agency-red?style=for-the-badge&logo=lightning&logoColor=white)
