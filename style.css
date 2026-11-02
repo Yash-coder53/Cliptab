@@ -21,6 +21,7 @@ body {
     background-color: #f9fafb;
     color: #111827;
     line-height: 1.5;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 section {
@@ -75,30 +76,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------- MOBILE MENU ---------- */
 .mobile-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.mobile-menu.open {
-    max-height: 400px;
+.mobile-menu.active {
+    display: block;
+    opacity: 1;
 }
 
 .mobile-link {
     text-decoration: none;
-    padding: 0.5rem 0;
     display: block;
-    border-bottom: 1px solid #f3f4f6;
-}
-
-.mobile-link:last-child {
-    border-bottom: none;
+    width: 100%;
 }
 
 /* ---------- HERO ---------- */
 .hero-card {
     transition: transform 0.4s ease;
     animation: floatCard 6s ease-in-out infinite;
+    position: relative;
 }
 
 @keyframes floatCard {
@@ -106,15 +104,10 @@ h1, h2, h3, h4, h5, h6 {
     50%      { transform: translateY(-12px); }
 }
 
-.hero-glow {
-    filter: drop-shadow(0 0 18px rgba(239, 68, 68, 0.8));
-    animation: pulseGlow 2.2s infinite;
-}
-
-@keyframes pulseGlow {
-    0%   { filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.6)); }
-    50%  { filter: drop-shadow(0 0 28px rgba(239, 68, 68, 1)); }
-    100% { filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.6)); }
+/* Logo glow effect */
+.hero-card img {
+    border-radius: 1rem;
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.2);
 }
 
 /* ---------- TAB SYSTEM ---------- */
@@ -165,20 +158,7 @@ textarea:focus {
     transform: none;
 }
 
-/* ---------- CARDS & BOXES ---------- */
-.bg-white,
-.rounded-3xl,
-.rounded-2xl,
-.rounded-xl {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* ---------- UTILITY: SMOOTH LINK TRANSITION ---------- */
-a {
-    transition: color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
-}
-
-/* ---------- BREAK LONG EMAILS ON MOBILE ---------- */
+/* ---------- UTILITY ---------- */
 .break-all {
     word-break: break-all;
 }
@@ -201,13 +181,47 @@ a {
     background: #b91c1c;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ==========================================
+   MEDIA QUERIES FOR PERFECT MOBILE RESPONSIVENESS
+   ========================================== */
+
 @media (max-width: 768px) {
     .hero-card {
-        animation: none;
+        animation: none; 
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
+
     h1 {
-        font-size: 2.75rem;
+        font-size: 2.8rem;
+        line-height: 1.1;
+    }
+    
+    .hero-card .absolute {
+        transform: scale(0.9);
+    }
+
+    .hero-card .absolute.bottom-0 {
+        bottom: 0.5rem;
+        left: 0.5rem;
+    }
+    
+    .hero-card .absolute.top-0 {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    #contactForm {
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+    .hero-card {
+        max-width: 280px;
     }
 }
 
